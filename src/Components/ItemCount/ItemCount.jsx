@@ -3,26 +3,28 @@ import { useState } from 'react';
 
 
 
-function ItemCount () {
-    const [count, setCantidad ] = useState (1)
+function ItemCount () { 
+     const [stock, inicial ] = useState (1)
 
-    if ((count >1) && (count <10 )) {
+    console.log(stock)
+
+    if ((stock >1) && (stock <10 )) {
         function sumar(){
-            setCantidad (count + 1) 
+            inicial (stock + 1) 
         }
 
         function resta(){
-            setCantidad (count - 1) 
+            inicial (stock - 1) 
         }
 
         function agregar(){
-            console.log(count)
+            console.log(stock)
         }
 
         return (
             <>
                 <div>
-                    <h2>la cantidad en stock es {count}</h2>
+                    <h2>la cantidad en stock es {stock}</h2>
                     <button onClick={sumar}>+</button>
                     <button onClick={resta}>-</button>
                     <button onClick={agregar}>Agregar</button>
@@ -30,12 +32,12 @@ function ItemCount () {
                 </div>
             </>
         )
-    }else if (count<=1){
+    }else if (stock<=1){
         function sumar(){
-            setCantidad (count + 1) 
+            inicial (stock + 1) 
         }
         function agregar(){
-            console.log(count)
+            console.log(stock)
         }
 
 
@@ -43,26 +45,26 @@ function ItemCount () {
         return (
             <>
                 <div>
-                    <h2>No puedes agregar menos {count}</h2>
+                    <h2>No puedes agregar menos {stock}</h2>
                     <button onClick={sumar}>+</button>
                     <button onClick={agregar}>Agregar</button>
                 </div>
             </>
         )
 
-    }else if (count>=10){
+    }else if (stock>=10){
         function resta(){
-            setCantidad (count - 1) 
+            inicial (stock - 1) 
         }
 
         function agregar(){
-            console.log(count)
+            console.log(stock)
         }
 
         return (
             <>
                 <div>
-                    <h2>Ya alcanzaste la cantidad maxima de stock {count}</h2>
+                    <h2>Ya alcanzaste la cantidad maxima de stock {stock}</h2>
                     <button onClick={resta}>-</button>
                     <button onClick={agregar}>Agregar</button>
                     
@@ -72,6 +74,7 @@ function ItemCount () {
 
     }
 
+ 
 }
 
 
