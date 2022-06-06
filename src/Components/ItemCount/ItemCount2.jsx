@@ -1,48 +1,39 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 
-function  ItemCount2 (props) {
-    const [initial, setStock, onAdd] = useState(props.initial)
-    
-   
-    if ((initial >1) && (initial <10 )) {
-        return (
-            <>
-                <div>
-                    <h2>la cantidad seleccionada es {initial}</h2>
-                    <button onClick={() => setStock(initial + 1)}>+</button>
-                    <button onClick={() => setStock(initial - 1)}>-</button>
-                    <button onClick={() => (console.log(initial))}>Agregar</button>
-                </div>
-            </>
-        )
+const ItemCount2 = ({stock, initial, onAdd}) => {
+    const [count, setCount] = useState(initial)
 
-    }else if (initial<=1){
-        return (
-            <>
-                <div>
-                    <h2>la cantidad seleccionada es {initial}</h2>
-                    <button onClick={() => setStock(initial + 1)}>+</button>
-                    <button onClick={() => (console.log(initial))}>Agregar</button>
-                </div>
-            </>
-        )
-    }else if (initial>=10) {        
-        return (
-            <>
-                <div>
-                    <h2>la cantidad seleccionada es {initial}</h2>
-                    <button onClick={() => setStock(initial - 1)}>-</button>
-                    <button onClick={() => (console.log(initial))}>Agregar</button>
-                    
-                </div>
-            </>
-        )
-
+    function suma () {
+        if (count < stock){
+            setCount (count + 1)
+        }
     }
 
-  
-    
+    function resta() {
+        if (count > 0){
+            setCount(count - 1)
+        }
+    }
+
+    function onAdd () {
+        console.log(count)
+    }
+
+
+    return (
+        <div>
+            <h1>La cantidad iniciada es {count}</h1>
+            <button onClick={suma}> + </button>
+            <button onClick={resta}> - </button>
+            <button onClick={onAdd}> agregar </button>
+        </div>
+    )
+
+
+
+
 }
+
 
     
 
