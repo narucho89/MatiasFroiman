@@ -1,22 +1,43 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { getFetch } from "../../helpers/getFetch";
 import {Card,Button} from 'react-bootstrap'
 
+const Item = () => {
+    const [productos, setProductos] = useState([])
 
-function Item (){
-    return(
+    useEffect(()=>{ 
+        getFetch().then((resp)=> {
+            setProductos(resp)
+           
+        })
+        .catch(err => console.log(err))
+        .finally(()=> console.log() )
+        
+    },[])
+
+    console.log(productos)
+
+
+    return (
         <>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        </>
-    )
-}
-
+            <div>
+              {productos.map(producto=>
+                <div key={producto.id}>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={producto.image}/>
+                        <Card.Body>
+                        <Card.Title>{producto.marca} {producto.nombre}</Card.Title>
+                            <Card.Text>$ {producto.precio}</Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                </div>
+                )}  
+            </div>
+        </>   
+            
+        )
+       
+    }
 export default Item
