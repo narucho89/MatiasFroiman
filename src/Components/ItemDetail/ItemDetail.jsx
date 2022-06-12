@@ -1,24 +1,17 @@
-/*import { getFetch } from "../../helpers/getFetch"
 
-const ItemDetail = () => {
-    const [productos, setProductos] = useState([])
+const ItemDetail = ({productos}) => {
+    
 
-    useEffect(()=>{ 
-        getFetch().then((resp)=> {
-            setProductos(resp)
-           
-        })
-        .catch(err => console.log(err))
-        .finally(()=> console.log() )
-        
-    },[])
-    return (
+ return (
         <>
             <div>
-              {productos.map(producto=>
-                <div key={producto.id}>
-                    <h1>{producto.description}</h1>
-                </div>
+                {productos.map(producto=>
+                    <div key={producto.id}>
+                        <img src={producto.image}/>
+                        <h2>{producto.marca} {producto.nombre}</h2>
+                        <h3>$ {producto.precio}</h3>
+                        <p>{producto.description}</p>
+                    </div>
                 )}  
             </div>
         </>   
@@ -26,4 +19,4 @@ const ItemDetail = () => {
         )
        
     }
-export default ItemDetail*/
+export default ItemDetail
