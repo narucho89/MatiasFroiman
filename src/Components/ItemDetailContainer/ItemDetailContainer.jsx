@@ -1,8 +1,25 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { getFetch } from "../../helpers/getFetch";
 import {Card,Button} from 'react-bootstrap'
 
-const Item = ({productos}) => {
+const Item = () => {
+    const [productos, setProductos] = useState([])
 
-   return (
+    useEffect(()=>{ 
+        getFetch().then((resp)=> {
+            setProductos(resp)
+           
+        })
+        .catch(err => console.log(err))
+        .finally(()=> console.log() )
+        
+    },[])
+
+    console.log(productos)
+
+
+    return (
         <>
             <div>
               {productos.map(producto=>
@@ -23,6 +40,4 @@ const Item = ({productos}) => {
         )
        
     }
-
-
 export default Item
