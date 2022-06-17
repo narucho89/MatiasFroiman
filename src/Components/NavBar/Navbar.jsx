@@ -1,27 +1,29 @@
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap'
 import { BiCart } from "react-icons/bi";
+import {Link, NavLink} from 'react-router-dom'
 
 function NavBar () {
     return (
         <>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Narutech</Navbar.Brand>
+                    <Navbar.Brand>Narutech</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Quienes somos</Nav.Link>
+                            <NavLink to='/'>Home</NavLink>
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">AMD</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">INTEL</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">NVIDIA</NavDropdown.Item>
+                            <NavLink to="/categorias/Procesadores">Procesadores</NavLink>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Monitores</NavDropdown.Item>
+                            <NavLink to="/categorias/GPU">GPU</NavLink>
+                            <NavDropdown.Divider />
+                            <NavLink to="/categorias/MONITORES">MONITORES</NavLink>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-             <BiCart style={{color: 'white', fontSize: '50px'}}/>
+                    <Link to='/Cart'>
+                        <BiCart style={{color: 'white', fontSize: '50px'}}/>
+                    </Link>
                 </Container>
             </Navbar>
         </>

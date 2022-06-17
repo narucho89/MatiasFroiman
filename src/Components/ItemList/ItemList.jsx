@@ -2,7 +2,7 @@ import Item from '../Item/Item'
 import { useEffect } from "react";
 import { useState } from "react";
 import { getFetch } from "../../helpers/getFetch";
-import ItemDetail from '../ItemDetail/ItemDetail';
+
 
 
 
