@@ -1,12 +1,16 @@
 import Item from '../Item/Item'
 
 
-function ItemList({productos}) {
 
-return (
-  <>    
-   <Item productos={productos}/>
-  </>
+function ItemList({ productos }) {
+
+
+
+  return (
+    <>
+      <Item productos={productos} />
+    </>
+
   )
 }
 
