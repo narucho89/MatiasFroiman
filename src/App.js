@@ -15,7 +15,7 @@ function App() {
             <NavBar />
             <Routes>
                 <Route index  path='/' element={<ItemListContainer greeting='Bienvenido a Narutech' />}/>
-                <Route path='/categorias/:categoriaId' element={<ItemListContainer/>}/>
+                <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
                 <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
                 <Route path='*' element={<Navigate to='/'/>}/>
                 <Route path='/Cart' element={<Cart/>}/>
