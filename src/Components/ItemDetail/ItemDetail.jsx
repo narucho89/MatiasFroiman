@@ -1,8 +1,7 @@
-
+import Intercambiabilidad from "../intercambiabilidad/Intercambiabilidad"
 const ItemDetail = ({productos}) => {
     
-
- return (
+    return (
         <>
             <div>
                 {productos.map(producto=>
@@ -13,6 +12,10 @@ const ItemDetail = ({productos}) => {
                         <p>{producto.description}</p>
                     </div>
                 )}  
+            </div>
+            <div>
+               {/* <ItemCount2 initial={1} stock={10} onAdd={onAdd}/>*/}
+                <Intercambiabilidad/>
             </div>
         </>   
             

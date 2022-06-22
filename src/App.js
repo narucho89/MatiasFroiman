@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
      
     return (
-        <BrowserRouter>
+       <BrowserRouter>
             <NavBar />
             <Routes>
                 <Route index  path='/' element={<ItemListContainer greeting='Bienvenido a Narutech' />}/>
@@ -20,7 +20,7 @@ function App() {
                 <Route path='*' element={<Navigate to='/'/>}/>
                 <Route path='/Cart' element={<Cart/>}/>
             </Routes>
-        </BrowserRouter>
+       </BrowserRouter>
     )
 }
 
