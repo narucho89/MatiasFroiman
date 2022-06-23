@@ -1,4 +1,5 @@
 import Intercambiabilidad from "../intercambiabilidad/Intercambiabilidad"
+
 const ItemDetail = ({productos}) => {
     
     return (
@@ -14,7 +15,6 @@ const ItemDetail = ({productos}) => {
                 )}  
             </div>
             <div>
-               {/* <ItemCount2 initial={1} stock={10} onAdd={onAdd}/>*/}
                 <Intercambiabilidad/>
             </div>
         </>   

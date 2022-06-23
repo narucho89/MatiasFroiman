@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 
-const ItemCount2 = ({stock, initial, onAdd}) => {
-    console.log(stock)
-    
+
+const ItemCount2 = ({stock, initial, handleInter}) => {
+        
     const [count, setCount] = useState(initial)
 
     function suma () {
@@ -18,9 +18,9 @@ const ItemCount2 = ({stock, initial, onAdd}) => {
         }
     }
 
-    function onAdd () {
-        console.log(count)
-    }
+ //   function handleInter () {
+        
+  //  }
 
 
     return (
@@ -29,7 +29,7 @@ const ItemCount2 = ({stock, initial, onAdd}) => {
                 <h1>{count}</h1>
                 <button onClick={suma}> + </button>
                 <button onClick={resta}> - </button>
-                <ButtonCount/>
+                <button onClick={handleInter}>Agregar al Carrito</button>
             </div>
         </>
     )
