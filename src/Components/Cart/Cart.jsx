@@ -9,12 +9,10 @@ const Cart = () => {
     <div>
       <ul>
         {
-          cart.map (item => <li>{item.nombre}</li> )
+          cart.map(item => <li key={item.id}>{item.nombre}</li>)
         }
 
       </ul>
-
-
     </div>
   )
 }
