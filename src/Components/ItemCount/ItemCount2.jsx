@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 
 
-const ItemCount2 = ({stock, initial, handleInter}) => {
+const ItemCount2 = ({stock, initial, buttonCount}) => {
         
     const [count, setCount] = useState(initial)
 
@@ -18,9 +18,9 @@ const ItemCount2 = ({stock, initial, handleInter}) => {
         }
     }
 
- //   function handleInter () {
+    function buttonCount () {
         
-  //  }
+    }
 
 
     return (
@@ -29,7 +29,7 @@ const ItemCount2 = ({stock, initial, handleInter}) => {
                 <h1>{count}</h1>
                 <button onClick={suma}> + </button>
                 <button onClick={resta}> - </button>
-                <button onClick={handleInter}>Agregar al Carrito</button>
+                <button onClick={buttonCount}>Agregar al Carrito</button>
             </div>
         </>
     )
@@ -42,4 +42,4 @@ const ItemCount2 = ({stock, initial, handleInter}) => {
 
     
 
-export default ItemCount2
+//export default ItemCount2

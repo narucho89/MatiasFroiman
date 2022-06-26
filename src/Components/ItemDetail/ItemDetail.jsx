@@ -1,6 +1,21 @@
-import Intercambiabilidad from "../intercambiabilidad/Intercambiabilidad"
+//import { useContext } from "react"
+import ButtonCount from "../ButtonCount/ButtonCount"
+import { useCartContext } from "../Context/cartContext"
+//import { CartContext } from "../Context/cartContext"
+//import Intercambiabilidad from "../intercambiabilidad/Intercambiabilidad"
 
 const ItemDetail = ({productos}) => {
+
+    const {cart, addToCart} = useCartContext ()
+
+    const onAdd = (cant) => {
+        console.log(cant)
+        addToCart({ ...productos, cantidad: cant })
+    }
+
+    console.log(cart)
+
+        
     
     return (
         <>
@@ -13,9 +28,10 @@ const ItemDetail = ({productos}) => {
                         <p>{producto.description}</p>
                     </div>
                 )}  
-            </div>
+            </div> 
             <div>
-                <Intercambiabilidad/>
+                <ButtonCount initial={1} stock={10} onAdd={onAdd}/>
+               {/* <Intercambiabilidad onAdd={onAdd}/> */}
             </div>
         </>   
             

@@ -1,6 +1,21 @@
-function Cart  () {
+import { useCartContext } from "../Context/cartContext"
+
+
+const Cart = () => {
+  const { cart } = useCartContext()
+
+
   return (
-    <div>Cart</div>
+    <div>
+      <ul>
+        {
+          cart.map (item => <li>{item.nombre}</li> )
+        }
+
+      </ul>
+
+
+    </div>
   )
 }
 

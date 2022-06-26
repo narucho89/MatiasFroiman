@@ -10,7 +10,7 @@ const ItemDetailContainer = () =>{
         const {id} = useParams ()
       
         useEffect(()=>{ 
-            getFetch()
+            getFetch(id)
             .then((resp)=> {setProductos(resp.filter(producto => producto.id === id))})
             .catch(err => console.log(err))
             .finally(()=> console.log() )
