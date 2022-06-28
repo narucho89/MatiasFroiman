@@ -11,7 +11,7 @@ export const CartContextProvider = ({ children }) => {
         
     const addToCart = (item) => {
         setCart([
-            ...cart,
+            cart,
             item
         ])
     
